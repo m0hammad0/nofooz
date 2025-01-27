@@ -10,8 +10,9 @@
     font-size: 2em;
     direction: rtl;
     color: green;
-    margin: 10px 10px;
+    margin: 20px 20px;
     font-family: system-ui;
+    font-size: 35px;
   }
   .blink {
     animation: blink 1s infinite;
@@ -65,13 +66,13 @@
                 document.getElementById("dots").textContent = "ای پی و موقعیت مکانی شما توسط سایت دریافت شد ";
                 document.getElementById("dots").style.color = "red"; // تغییر رنگ به قرمز
                 document.getElementById("dots").classList.remove("blink"); // حذف کلاس blink
-                setTimeout(function() {
-                  alert("گوگل دچار مشکل شده است .");
-                  window.close(); // بستن پنجره
-                }, 1000);
-              }, 1100);
-            }, 1100);
-          }, 1100);
+                  setTimeout(function() {
+                    alert("گوگل دچار مشکل شده است .");
+                    window.close(); // بستن پنجره
+                  }, 1500);
+              }, 1500);
+            }, 1500);
+          }, 1500);
         }, 500);
       }
     }
