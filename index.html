@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>انیمیشن نقطه</title>
+<style>
+    body {
+        background: black;
+    }
+  #dots {
+    font-size: 2em;
+    direction: rtl;
+    color: green;
+    margin: 10px 10px;
+    font-family: system-ui;
+  }
+  .blink {
+    animation: blink 1s infinite;
+  }
+  @keyframes blink {
+    0% {
+      opacity: 1;
+    }
+    50% {
+      opacity: 0;
+    }
+    100% {
+      opacity: 1;
+    }
+  }
+</style>
+</head>
+<body>
+
+<div id="dots">.</div>
+
+<script>
+  let dots = ".";
+  let repeatCount = 0;
+
+  function updateDots() {
+    document.getElementById("dots").textContent = dots;
+
+    if (dots === ".") {
+      dots = "..";
+      setTimeout(updateDots, 200); // 1 ثانیه
+    } else if (dots === "..") {
+      dots = "...";
+      setTimeout(updateDots, 200); // 2 ثانیه
+    } else {
+      dots = ".";
+      repeatCount++;
+      if (repeatCount < 2) {
+        setTimeout(updateDots, 200); // 1 ثانیه بعد از 3 نقطه
+      } else {
+        setTimeout(function() {
+          document.getElementById("dots").textContent = "نفوذ به سیستم شما ...";
+          document.getElementById("dots").classList.add("blink"); // اضافه کردن کلاس blink
+          setTimeout(function() {
+          document.getElementById("dots").textContent = "دوربین هک شد ...";
+          document.getElementById("dots").classList.add("blink"); // اضافه کردن کلاس blink
+            setTimeout(function() {
+            document.getElementById("dots").textContent = "دسترسی به فایل ها موفق بود ...";
+            document.getElementById("dots").classList.add("blink"); // اضافه کردن کلاس blink
+              setTimeout(function() {
+                document.getElementById("dots").textContent = "ای پی و موقعیت مکانی شما توسط سایت دریافت شد ";
+                document.getElementById("dots").style.color = "red"; // تغییر رنگ به قرمز
+                document.getElementById("dots").classList.remove("blink"); // حذف کلاس blink
+                setTimeout(function() {
+                  alert("گوگل دچار مشکل شده است .");
+                  window.close(); // بستن پنجره
+                }, 1000);
+              }, 1100);
+            }, 1100);
+          }, 1100);
+        }, 500);
+      }
+    }
+  }
+
+  updateDots();
+</script>
+
+</body>
+</html>
