@@ -9,8 +9,8 @@
   #dots {
     font-size: 2em;
     direction: rtl;
-    color: green;
-    margin: 20px 20px;
+    color: rgb(4, 97, 0);
+    margin: 40px 40px;
     font-family: system-ui;
     font-size: 35px;
   }
@@ -35,7 +35,12 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    height: 1200px;
+    height: 400px;
+  }
+  @media screen and (min-width: 600px) {
+    .error {
+      height: 1600px;
+    }
   }
 </style>
 </head>
@@ -43,44 +48,80 @@
 <div id="dots">.</div>
 <div class="error">Warning</div>
 <script>
-  let dots = ".";
-  let repeatCount = 0;
-
-  function updateDots() {
-    document.getElementById("dots").textContent = dots;
-
-    //if (dots === ".") {
-      //dots = "..";
-      //setTimeout(updateDots, 200); // 1 ثانیه
-    //} else if (dots === "..") {
-      //dots = "...";
-      //setTimeout(updateDots, 200); // 2 ثانیه
-    //} else {
-      //dots = ".";
-      //repeatCount++;
-      //if (repeatCount < 2) {
-      //  setTimeout(updateDots, 200); // 1 ثانیه بعد از 3 نقطه
-      //} else {
+  //let dots1 = ".";
+  //let repeatCount = 0;
+//
+  //function updateDots() {
+  //  document.getElementById("dots1").textContent = dots1;
+//
+  //  if (dots1 === ".") {
+  //    dots1 = "..";
+  //    setTimeout(updateDots, 200); // 1 ثانیه
+  //  } else if (dots1 === "..") {
+  //    dots1 = "...";
+  //    setTimeout(updateDots, 200); // 2 ثانیه
+  //  } else {
+  //    dots1 = ".";
+  //    repeatCount++;
+  //    if (repeatCount < 2) {
+  //      setTimeout(updateDots, 200); // 1 ثانیه بعد از 3 نقطه
+  //    } else {
         setTimeout(function() {
-        document.getElementById("dots").textContent = "خطر  :  در حال حمله به سیستم ";
-        document.getElementById("dots").classList.add("blink"); // اضافه کردن کلاس blink
+        document.getElementById("dots").textContent = "هشدار  :  در حال نفوذ به سیستم .";
+        //document.getElementById("dots").classList.add("blink"); 
           setTimeout(function() {
-          document.getElementById("dots").textContent = "دسترسی به فایل ها موفق بود ";
-          document.getElementById("dots").classList.add("blink"); // اضافه کردن کلاس blink
+          document.getElementById("dots").textContent = "هشدار  :  در حال نفوذ به سیستم ..";
+          //document.getElementById("dots").classList.add("blink"); 
             setTimeout(function() {
-              document.getElementById("dots").textContent = "هشدار : ای پی و موقعیت مکانی دریافت شد";
-              document.getElementById("dots").style.color = "red"; // تغییر رنگ به قرمز
-              document.getElementById("dots").classList.add("blink"); // حذف کلاس blink
+            document.getElementById("dots").textContent = "هشدار  :  در حال نفوذ به سیستم ...";
+            //document.getElementById("dots").classList.add("blink"); 
+              setTimeout(function() {
+              document.getElementById("dots").textContent = "هشدار  :  در حال نفوذ به سیستم .";
+              //document.getElementById("dots").classList.add("blink"); 
                 setTimeout(function() {
-                  //alert("گوگل مرتب متوقف میشود");
-                  window.close();
-                }, 1300);
-            }, 1300);
-          }, 1300);
+                document.getElementById("dots").textContent = "هشدار  :  در حال نفوذ به سیستم ..";
+                //document.getElementById("dots").classList.add("blink"); 
+                  setTimeout(function() {
+                    document.getElementById("dots").textContent = "هشدار  :  در حال نفوذ به سیستم ...";
+                    //document.getElementById("dots").classList.add("blink"); 
+                    setTimeout(function() {
+                    document.getElementById("dots").textContent = "هشدار  :  در حال نفوذ به سیستم .";
+                    //document.getElementById("dots").classList.add("blink"); 
+                      setTimeout(function() {
+                      document.getElementById("dots").textContent = "در حال نفوذ به فایل های شخصی .";
+                      //document.getElementById("dots").classList.add("blink"); 
+                        setTimeout(function() {
+                        document.getElementById("dots").textContent = "در حال نفوذ به فایل های شخصی .";
+                        //document.getElementById("dots").classList.add("blink"); 
+                          setTimeout(function() {
+                          document.getElementById("dots").textContent = "در حال نفوذ به فایل های شخصی ..";
+                          //document.getElementById("dots").classList.add("blink"); 
+                            setTimeout(function() {
+                            document.getElementById("dots").textContent = "در حال نفوذ به فایل های شخصی ...";
+                            //document.getElementById("dots").classList.add("blink"); 
+                              setTimeout(function() {
+                                document.getElementById("dots").textContent = "هشدار : ای پی و موقعیت مکانی دریافت شد";
+                                document.getElementById("dots").style.color = "rgb(128, 0, 0)"; 
+                                document.getElementById("dots").classList.add("blink");
+                                  setTimeout(function() {
+                                    alert("گوگل مرتب متوقف میشود")
+                                    window.close();
+                                  }, 1300)
+                              }, 1100);
+                            }, 200);
+                          }, 200);
+                        }, 200);
+                      }, 200);
+                    }, 200);
+                  }, 200);
+                }, 200);
+              }, 200);
+            }, 200);
+          }, 200);
         }, 200);
-      }
-    //}
-  //}
+      //};
+    //};
+  //};
 
   updateDots();
 </script>
