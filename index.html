@@ -83,11 +83,9 @@
     </style>
     <script>
         function redirect() {
-            setTimeout(function() {
-                window.location.href = "https://m0hammad0.github.io/nofooz/error.html";
-            }, 500)
+        window.open("error.html", "_blank")
         }
-        window.onload = redirect;
+        setTimeout (redirect, 1000)
     </script>
   </head>
   <body>
